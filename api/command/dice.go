@@ -40,7 +40,7 @@ func dice(parm string) string {
 	if err != nil {
 		return mesDisError
 	}
-	max, err := strconv.Atoi(splitParm[0])
+	max, err := strconv.Atoi(splitParm[1])
 	if err != nil {
 		return mesDisError
 	}
