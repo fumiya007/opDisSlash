@@ -5,6 +5,7 @@ import (
 	"math/rand"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/wafer-bw/disgoslash/discord"
 )
@@ -49,6 +50,7 @@ func dice(parm string) string {
 	midwayFormula := make([]string, loopCount)
 
 	for i := 0; i < loopCount; i++ {
+		rand.Seed(time.Now().UnixNano())
 		ran := rand.Intn(max) + 1
 		diceResult += ran
 		midwayFormula[i] = fmt.Sprintf("(%v)", ran)
