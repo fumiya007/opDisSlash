@@ -7,7 +7,6 @@
 package api
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 
@@ -19,7 +18,7 @@ import (
 
 // GuildIDs holds the list of Guild (server) IDs you would like to register
 // a slash command to.
-var GuildIDs = []string{"690360011301715989"}
+var GuildIDs = []string{}
 
 // Global indicates whether or not a slash command should be registered globally
 // across all Guilds the bot has access to.
@@ -105,12 +104,6 @@ var SlashCommandMap = disgoslash.NewSlashCommandMap(helpSlashCommand, selectSlas
 
 // Handler acts as the entrypoint for slash command requests.
 func Handler(w http.ResponseWriter, r *http.Request) {
-	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("recover:", err)
-		}
-	}()
-
 	handler := &disgoslash.Handler{SlashCommandMap: SlashCommandMap, Creds: GetCredentials()}
 	handler.Handle(w, r)
 }
