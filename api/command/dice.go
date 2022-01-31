@@ -49,7 +49,7 @@ func dice(parm string) string {
 	midwayFormula := make([]string, loopCount)
 
 	for i := 0; i < loopCount; i++ {
-		ran := rand.Int()%max + 1
+		ran := rand.Intn(max) + 1
 		diceResult += ran
 		midwayFormula[i] = fmt.Sprintf("(%v)", ran)
 	}
