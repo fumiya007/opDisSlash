@@ -25,9 +25,9 @@ func Test_dice(t *testing.T) {
 		{
 			name: "ランダムの結果が返却されるテスト2",
 			args: args{
-				parm: "1000d100",
+				parm: "20d100",
 			},
-			want: "`1000d100`=(.*)=[0-9*]",
+			want: "`20d100`=(.*)=[0-9*]",
 		},
 		{
 			name: "フォーマットエラー1",
@@ -46,7 +46,7 @@ func Test_dice(t *testing.T) {
 		{
 			name: "ダイスの数が多すぎるエラー",
 			args: args{
-				parm: "1001d100",
+				parm: "21d100",
 			},
 			want: "20より多くのダイスはふれません。",
 		},
