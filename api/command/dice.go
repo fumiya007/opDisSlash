@@ -1,11 +1,14 @@
 package command
 
 import (
+	crand "crypto/rand"
 	"fmt"
-	"math/rand"
+	"math"
 	"strconv"
 	"strings"
-	"time"
+
+	"math/big"
+	"math/rand"
 
 	"github.com/wafer-bw/disgoslash/discord"
 )
@@ -50,10 +53,11 @@ func dice(parm string) string {
 	midwayFormula := make([]string, loopCount)
 
 	for i := 0; i < loopCount; i++ {
-		rand.Seed(time.Now().UnixNano())
-		ran := rand.Intn(max) + 1
-		diceResult += ran
-		midwayFormula[i] = fmt.Sprintf("(%v)", ran)
+		seed, _ := crand.Int(crand.Reader, big.NewInt(math.MaxInt64))
+		rand.Seed(seed.Int64())
+		n := rand.Intn(max) + 1
+		diceResult += n
+		midwayFormula[i] = fmt.Sprintf("(%v)", n)
 	}
 
 	return fmt.Sprintf("`%v`=%v=%v", parm, strings.Join(midwayFormula, "+"), diceResult)
