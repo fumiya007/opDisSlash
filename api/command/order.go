@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"strings"
 
-	"github.com/fumiya007/opDisSlash/api/command/util"
+	"github.com/fumiya007/tpDisSlash/api/command/util"
 	"github.com/wafer-bw/disgoslash/discord"
 )
 

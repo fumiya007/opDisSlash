@@ -1,4 +1,4 @@
-module github.com/fumiya007/opDisSlash
+module github.com/fumiya007/tpDisSlash
 
 // +heroku goVersion go1.17
 go 1.17

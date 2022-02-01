@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/fumiya007/opDisSlash/api"
+	"github.com/fumiya007/tpDisSlash/api"
 	"github.com/joho/godotenv"
 	"github.com/wafer-bw/disgoslash"
 )

@@ -13,7 +13,7 @@ import (
 	"github.com/wafer-bw/disgoslash"
 	"github.com/wafer-bw/disgoslash/discord"
 
-	"github.com/fumiya007/opDisSlash/api/command"
+	"github.com/fumiya007/tpDisSlash/api/command"
 )
 
 // GuildIDs holds the list of Guild (server) IDs you would like to register
@@ -39,7 +39,7 @@ func GetCredentials() *discord.Credentials {
 }
 
 var helpAC = &discord.ApplicationCommand{
-	Name:              "help-op",
+	Name:              "help-tp",
 	Description:       "opボットのヘルプ",
 	Options:           []*discord.ApplicationCommandOption{},
 	DefaultPermission: true,
