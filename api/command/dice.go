@@ -23,7 +23,7 @@ func DiceCommand(request *discord.InteractionRequest) *discord.InteractionRespon
 	return &discord.InteractionResponse{
 		Type: discord.InteractionResponseTypeChannelMessageWithSource,
 		Data: &discord.InteractionApplicationCommandCallbackData{
-			Content: fmt.Sprintf("`%v` /r parm:%v \n%v", request.Member.User.ID, parm, dice(parm)),
+			Content: fmt.Sprintf("<@%v> /r parm:%v \n%v", request.Member.User.ID, parm, dice(parm)),
 		},
 	}
 }
