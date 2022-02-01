@@ -15,7 +15,7 @@ func HelpCommand(request *discord.InteractionRequest) *discord.InteractionRespon
 	return &discord.InteractionResponse{
 		Type: discord.InteractionResponseTypeChannelMessageWithSource,
 		Data: &discord.InteractionApplicationCommandCallbackData{
-			Content: fmt.Sprintf("<@%v> %v", request.Member.User.ID, helpMessage),
+			Content: fmt.Sprintf("<@%v>\n%v", request.Member.User.ID, helpMessage),
 		},
 	}
 }
