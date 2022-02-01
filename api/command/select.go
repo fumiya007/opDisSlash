@@ -17,7 +17,7 @@ func SelectCommand(request *discord.InteractionRequest) *discord.InteractionResp
 	return &discord.InteractionResponse{
 		Type: discord.InteractionResponseTypeChannelMessageWithSource,
 		Data: &discord.InteractionApplicationCommandCallbackData{
-			Content: fmt.Sprintf("/select number:%v members:%v \n%v", loopCount, parmMembers, selectMembers(loopCount, parmMembers)),
+			Content: fmt.Sprintf("<@%v> /select number:%v members:%v \n%v", request.Member.User.ID, loopCount, parmMembers, selectMembers(loopCount, parmMembers)),
 		},
 	}
 }

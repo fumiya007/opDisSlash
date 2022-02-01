@@ -1,6 +1,8 @@
 package command
 
 import (
+	"fmt"
+
 	"github.com/wafer-bw/disgoslash/discord"
 )
 
@@ -13,7 +15,7 @@ func HelpCommand(request *discord.InteractionRequest) *discord.InteractionRespon
 	return &discord.InteractionResponse{
 		Type: discord.InteractionResponseTypeChannelMessageWithSource,
 		Data: &discord.InteractionApplicationCommandCallbackData{
-			Content: helpMessage,
+			Content: fmt.Sprintf("<@%v> %v", request.Member.User.ID, helpMessage),
 		},
 	}
 }

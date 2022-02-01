@@ -16,7 +16,7 @@ func OrderCommand(request *discord.InteractionRequest) *discord.InteractionRespo
 	return &discord.InteractionResponse{
 		Type: discord.InteractionResponseTypeChannelMessageWithSource,
 		Data: &discord.InteractionApplicationCommandCallbackData{
-			Content: fmt.Sprintf("/order members:%v \n%v", parmMembers, order(parmMembers)),
+			Content: fmt.Sprintf("<@%v> /order members:%v \n%v", request.Member.User.ID, parmMembers, order(parmMembers)),
 		},
 	}
 }
